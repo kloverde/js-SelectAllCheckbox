@@ -56,10 +56,6 @@ class CheckboxGroup {
     *                          and "all".
     */
    constructor( selectAllId, groupName, onChangeCallback ) {
-      const GROUP_STATE_NONE = "none";
-      const GROUP_STATE_SOME = "some";
-      const GROUP_STATE_ALL  = "all";
-
       const selectAllCheckbox = document.getElementById( selectAllId );
       this.name = groupName;
 
@@ -92,11 +88,11 @@ class CheckboxGroup {
          let newState = null;
 
          if( howManyChecked === 0 ) {
-            newState = GROUP_STATE_NONE;
+            newState = CheckboxGroup.GROUP_STATE_NONE;
          } else if( howManyChecked < allCheckboxes.length ) {
-            newState = GROUP_STATE_SOME;
+            newState = CheckboxGroup.GROUP_STATE_SOME;
          } else if( howManyChecked === allCheckboxes.length ) {
-            newState = GROUP_STATE_ALL;
+            newState = CheckboxGroup.GROUP_STATE_ALL;
          } else {
             throw "Impossible result:  more checkboxes checked than actually exist";
          }
@@ -118,7 +114,7 @@ class CheckboxGroup {
             let someChecked = false,
                 someNotChecked = false;
 
-            let status = GROUP_STATE_NONE;
+            let status = CheckboxGroup.GROUP_STATE_NONE;
 
             this.checkboxElements.forEach( b => {
                if( b.checked ) {
@@ -129,11 +125,11 @@ class CheckboxGroup {
             } );
 
             if( someChecked && someNotChecked ) {
-               status = GROUP_STATE_SOME;
+               status = CheckboxGroup.GROUP_STATE_SOME;
             } else if( someChecked && !someNotChecked ) {
-               status = GROUP_STATE_ALL;
+               status = CheckboxGroup.GROUP_STATE_ALL;
             } else if( !someChecked ) {
-               status = GROUP_STATE_NONE;
+               status = CheckboxGroup.GROUP_STATE_NONE;
             }
 
             updateSelectAllCheckboxState( this, status );
@@ -158,11 +154,11 @@ class CheckboxGroup {
             }
 
             if( checkedCount === 0 ) {
-               state = GROUP_STATE_NONE;
+               state = CheckboxGroup.GROUP_STATE_NONE;
             } else if( checkedCount < checkboxes.length ) {
-               state = GROUP_STATE_SOME;
+               state = CheckboxGroup.GROUP_STATE_SOME;
             } else if( checkedCount === checkboxes.length ) {
-               state = GROUP_STATE_ALL;
+               state = CheckboxGroup.GROUP_STATE_ALL;
             } else {
                throw "Impossible result:  more checkboxes checked than actually exist";
             }
@@ -174,13 +170,13 @@ class CheckboxGroup {
       // Sets the select-all checkbox to checked, unchecked or partially checked
 
       function updateSelectAllCheckboxState( instance, state ) {
-         if( state === GROUP_STATE_SOME ) {
+         if( state === CheckboxGroup.GROUP_STATE_SOME ) {
             selectAllCheckbox.checked = false;
             selectAllCheckbox.indeterminate = true;
-         } else if( state === GROUP_STATE_ALL ) {
+         } else if( state === CheckboxGroup.GROUP_STATE_ALL ) {
             selectAllCheckbox.indeterminate = false;
             selectAllCheckbox.checked = true;
-         } else if( state === GROUP_STATE_NONE ) {
+         } else if( state === CheckboxGroup.GROUP_STATE_NONE ) {
             selectAllCheckbox.indeterminate = false;
             selectAllCheckbox.checked = false;
          }
@@ -196,3 +192,7 @@ class CheckboxGroup {
       return Array.from( document.querySelectorAll("input[type='checkbox'][name='" + this.name + "']") );
    }
 }
+
+CheckboxGroup.GROUP_STATE_NONE = "none";
+CheckboxGroup.GROUP_STATE_SOME = "some";
+CheckboxGroup.GROUP_STATE_ALL  = "all";
