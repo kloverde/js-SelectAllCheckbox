@@ -193,6 +193,17 @@ class CheckboxGroup {
    }
 }
 
-CheckboxGroup.GROUP_STATE_NONE = "none";
-CheckboxGroup.GROUP_STATE_SOME = "some";
-CheckboxGroup.GROUP_STATE_ALL  = "all";
+Object.defineProperty( CheckboxGroup, "GROUP_STATE_NONE", {
+    value: "none",
+    writable: false
+} );
+
+Object.defineProperty( CheckboxGroup, "GROUP_STATE_SOME", {
+    value: "some",
+    writable: false
+} );
+
+Object.defineProperty( CheckboxGroup, "GROUP_STATE_ALL", {
+    value: "all",
+    writable: false
+} );
