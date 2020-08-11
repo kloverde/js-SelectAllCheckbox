@@ -12,7 +12,7 @@ This library is a vanilla JavaScript port of [my jQuery SelectAllCheckbox plugin
 
 * This library is incompatible with all versions of IE.  I do projects like this to learn, and I wanted to use ES6 features.  (I tested in Chromium, Firefox and legacy Edge, and those were OK).
 * The use of indeterminate checkboxes can no longer be disabled via configuration
-* Minor API differences, though conceptually it's the same (see the #Using section)
+* Minor API differences, though conceptually it's the same (see the [Using](#Using) section)
 
 ## Features
 
