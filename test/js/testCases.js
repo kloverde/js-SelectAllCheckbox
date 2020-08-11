@@ -70,8 +70,6 @@ var testCases;
    };
 
    testCases = [
-      //--------------------
-
       tc( "noneDisabled_noneChecked", checkboxGroups["noneDisabled_noneChecked"], SelectAllState.NOT_CHECKED,
           [ clickScript("selectAll", [0, 1, 2, 3], CheckboxGroup.GROUP_STATE_ALL,  SelectAllState.CHECKED,     [true,  true,  true,  true]),
             clickScript("selectAll", [0, 1, 2, 3], CheckboxGroup.GROUP_STATE_NONE, SelectAllState.NOT_CHECKED, [false, false, false, false]),

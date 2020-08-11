@@ -41,8 +41,8 @@
    var affectedBoxes = null;
    var groupState = null;
 
-   $( document ).ready( function() {
-      checkboxContainer = $( "#checkboxContainer" );
+   window.addEventListener( "DOMContentLoaded", () => {
+      checkboxContainer = document.getElementById( "checkboxContainer" );
    } );
 
    function callback( boxes, checkedState ) {
@@ -56,31 +56,33 @@
    }
 
    function initGroup( boxConfig ) {
-      checkboxContainer.html( "" );
+      checkboxContainer.innerHTML = "";
 
       // Create the select-all checkbox
-      $( "<input/>", {
-         type : "checkbox",
-         id   : "selectAll",
-      } ).appendTo( checkboxContainer );
+      const selectAll = document.createElement( "input" );
+
+      selectAll.type = "checkbox";
+      selectAll.id = "selectAll";
+
+      checkboxContainer.appendChild( selectAll );
 
       // Create the rest of the checkboxes
       for( var i = 0; i < boxConfig.length; i++ ) {
-         var box = $( "<input/>", {
-            type : "checkbox",
-            id   : "box" + i,
-            name : groupName
-         } );
+         const box = document.createElement( "input" );
+
+         box.type="checkbox";
+         box.id = "box" + i;
+         box.name = groupName;
 
          if( !boxConfig[i].enabled ) {
-            box.prop( "disabled", true );
+            box.disabled = true;
          }
 
          if( boxConfig[i].checked ) {
-            box.prop( "checked", true );
+            box.checked = true;
          }
 
-         box.appendTo( checkboxContainer );
+         checkboxContainer.appendChild( box );
       }
 
       new CheckboxGroup(
