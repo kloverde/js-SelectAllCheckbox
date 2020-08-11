@@ -118,17 +118,17 @@
    }
 
    function validateSelectAll( expected, isInit ) {
-      var selectAll = $( "#selectAll" );
+      var selectAll = document.getElementById( "selectAll" );
 
       if( expected === SelectAllState.CHECKED ) {
-         ok( selectAll.is(":checked"), "The select-all checkbox should be CHECKED " + (isInit ? "at initialization" : "") );
-         equal( selectAll.prop("indeterminate"), false, "The select-all checkbox should not be indeterminate " + (isInit ? "at initialization" : "") );
+         ok( selectAll.checked, "The select-all checkbox should be CHECKED " + (isInit ? "at initialization" : "") );
+         equal( selectAll.indeterminate, false, "The select-all checkbox should not be indeterminate " + (isInit ? "at initialization" : "") );
       } else if( expected === SelectAllState.NOT_CHECKED ) {
-         notOk( selectAll.is(":checked"), "The select-all checkbox should be NOT CHECKED " + (isInit ? "at initialization" : "") );
-         equal( selectAll.prop("indeterminate"), false, "The select-all checkbox should not be indeterminate " + (isInit ? "at initialization" : "") );
+         notOk( selectAll.checked, "The select-all checkbox should be NOT CHECKED " + (isInit ? "at initialization" : "") );
+         equal( selectAll.indeterminate, false, "The select-all checkbox should not be indeterminate " + (isInit ? "at initialization" : "") );
       } else if( expected === SelectAllState.PARTIALLY_CHECKED ) {
-         notOk( selectAll.is(":checked"), "The select-all checkbox should be NOT CHECKED " + (isInit ? "at initialization" : "") );
-         equal( selectAll.prop("indeterminate"), true, "The select-all checkbox should be indeterminate " + (isInit ? "at initialization" : "") );
+         notOk( selectAll.checked, "The select-all checkbox should be NOT CHECKED " + (isInit ? "at initialization" : "") );
+         equal( selectAll.indeterminate, true, "The select-all checkbox should be indeterminate " + (isInit ? "at initialization" : "") );
       } else {
          throw "Unknown value for expected: " + expected;
       }
@@ -137,9 +137,8 @@
    function validateBoxStates( expectedBoxStates ) {
       var boxStateIdx = 0;
 
-      $( "input[name='group']" ).each( function() {
-         var box = $( this );
-         equal( box.is(":checked"), expectedBoxStates[boxStateIdx], "Verify " + box.attr("id") + " is " + (expectedBoxStates[boxStateIdx] ? "checked" : "not checked") );
+      document.querySelectorAll( "input[name='group']" ).forEach( box => {
+         equal( box.checked, expectedBoxStates[boxStateIdx], "Verify " + box.id + " is " + (expectedBoxStates[boxStateIdx] ? "checked" : "not checked") );
          boxStateIdx++;
       } );
    }
@@ -157,9 +156,9 @@
             resetCallback();
 
             if( isNaN(click.whichBox ) ) {
-               $( "#" + click.whichBox ).click();
+               document.getElementById( click.whichBox ).click();
             } else {
-               $( "#box" + click.whichBox ).click();
+               document.getElementById( "box" + click.whichBox ).click();
             }
 
             validateCallback( click.expectedCallbackChanged, click.expectedCallbackGroupState );
