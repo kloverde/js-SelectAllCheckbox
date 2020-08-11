@@ -1,6 +1,6 @@
 /*
  * SelectAllCheckboxJS v1.0
- * https://www.github.com/kloverde/js-SelectAllCheckboxJS
+ * https://www.github.com/kloverde/js-SelectAllCheckbox
  *
  * Donations:  https://paypal.me/KurtisLoVerde/5
  *

@@ -16,12 +16,12 @@ This library is a vanilla JavaScript port of [my jQuery SelectAllCheckbox plugin
 
 ## Features
 
-* Select/deselect-all checkboxes in a group via a select-all checkbox which you designate
-* When checkboxes are individually checked/unchecked, the select-all checkbox's status updates accordingly between checked, indeterminate (partially checked) and checked
+* Grants a checkbox control over a group of checkboxes to select or deselect all of them
+* When checkboxes are individually checked/unchecked, the select-all checkbox's state updates accordingly between checked, indeterminate (partially checked) and checked
 * Supports any number of checkbox groups
 * Configuration accepts a callback which executes when one or more checkboxes changes state
 * The callback receives the changed checkbox(es) as an array of DOM objects, plus the status of the checkbox group (all/some/none checked)
-* Select-all checkboxes do not modify the state of disabled checkboxes
+* Select-all checkboxes do not modify the state of disabled checkboxes.  Disabled checkboxes do affect the state of the select-all checkbox.
 
 
 ## Using
@@ -35,7 +35,6 @@ This library is a vanilla JavaScript port of [my jQuery SelectAllCheckbox plugin
 | `CheckboxGroup.GROUP_STATE_NONE` | Reflects the state of the checkbox group; a string with value `none` |
 | `CheckboxGroup.GROUP_STATE_SOME` | Reflects the state of the checkbox group; a string with value `some` |
 | `CheckboxGroup.GROUP_STATE_ALL` | Reflects the state of the checkbox group; a string with value `all` |
-
 
 #### Constructor Arguments
 
