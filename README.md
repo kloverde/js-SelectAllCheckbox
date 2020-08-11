@@ -50,13 +50,6 @@ The callback function receives two arguments:
 1.  The affected checkboxes as an array of DOM objects
 2.  A string representing how many checkboxes in the group are checked; see `CheckboxGroup.GROUP_STATE_NONE`, `CheckboxGroup.GROUP_STATE_SOME` and `CheckboxGroup.GROUP_STATE_ALL`.
 
-#### Object properties
-
-| Property | Description |
-| ----------------- | ----------------------------------------|
-| name | The HTML "name" attribute of the checkboxes |
-| state | A string representing how many checkboxes in the group are checked; see `CheckboxGroup.GROUP_STATE_NONE`, `CheckboxGroup.GROUP_STATE_SOME` and `CheckboxGroup.GROUP_STATE_ALL`. |
-
 #### Example
 
 ```javascript
