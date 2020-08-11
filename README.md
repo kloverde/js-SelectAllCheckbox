@@ -10,14 +10,14 @@ This library is a vanilla JavaScript port of [my jQuery SelectAllCheckbox plugin
 
 ## Differences between this and the jQuery version
 
-* Portability has not been taken into account.  I no longer use Windows at home, so I haven't tested in IE.  If it works in IE, I wouldn't expect it to work in anything less than IE 11.  Give it a whirl.
+* This library is incompatible with all versions of IE.  I do projects like this to learn, and I wanted to use ES6 features.  (I tested in Chromium, Firefox and legacy Edge, and those were OK).
 * The use of indeterminate checkboxes can no longer be disabled via configuration
 * Minor API differences, though conceptually it's the same (see the #Using section)
 
 ## Features
 
 * Grants a checkbox control over a group of checkboxes to select or deselect all of them
-* When checkboxes are individually checked/unchecked, the select-all checkbox's state updates accordingly between checked, indeterminate (partially checked) and checked
+* When checkboxes are individually checked/unchecked, the select-all checkbox's state updates accordingly between not checked, indeterminate (partially checked) and checked
 * Supports any number of checkbox groups
 * Configuration accepts a callback which executes when one or more checkboxes changes state
 * The callback receives the changed checkbox(es) as an array of DOM objects, plus the status of the checkbox group (all/some/none checked)
