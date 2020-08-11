@@ -1,9 +1,9 @@
-SelectAllCheckboxJS v1.0
-========================
+SelectAllCheckbox v1.0
+======================
 
 See LICENSE for this software's licensing terms.
 
-SelectAllCheckboxJS is a JavaScript library which makes it easy to create "select all" checkboxes for checkbox groups.
+SelectAllCheckbox is a JavaScript library which makes it easy to create "select all" checkboxes for checkbox groups.
 
 This library is a vanilla JavaScript port of [my jQuery SelectAllCheckbox plugin](https://www.github.com/kloverde/jquery-SelectAllCheckbox).
 
