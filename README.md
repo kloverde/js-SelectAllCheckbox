@@ -65,8 +65,3 @@ let group1 = new CheckboxGroup(
 See `demo/demo.html` file for a more thorough demo.
 
 If you change a checkbox's state via script (for example, with `document.getElementById("box1").checked = true`, you must manually fire the `change` event on the checkbox to ensure that the select-all checkbox's state is updated.
-
-
-## Thanks
-
-Do you like this library?  Want to toss a few bucks my way to say thanks?  I accept donations at https://paypal.me/KurtisLoVerde/5.  Thank you for your support!
